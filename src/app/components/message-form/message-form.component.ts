@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { Message } from '../../models/message';
+import { DFResponse, Message } from '../../models/response';
 import { DialogflowService } from '../../services/dialogflow.service';
 import { SpeechRecognitionService } from '../../services/Speech.service';
 import { Router } from '@angular/router';
@@ -15,6 +15,8 @@ export class MessageFormComponent implements OnInit, OnDestroy {
   speechSubscription: any;
   user: any;
   sugesstions = ['Hi', 'Hello', 'Help', 'What can you do for me?', 'Search Doctor', 'Search Dentist', 'Thanks'];
+  request: any = { text: '' };
+
 
   // tslint:disable-next-line:no-input-rename
   @Input('message')
@@ -25,6 +27,7 @@ export class MessageFormComponent implements OnInit, OnDestroy {
   public messages: Message[];
 
   localMessages: any;
+
   constructor(private router: Router,
     private dialogFlowService: DialogflowService,
     public speechRecognitionService: SpeechRecognitionService) {
@@ -41,18 +44,17 @@ export class MessageFormComponent implements OnInit, OnDestroy {
   }
 
   public sendMessage(): void {
-    this.sugesstions = [];
-    if (this.message.speech !== '') {
-      this.message.timestamp = new Date();
-      this.message.messages = [{ speech: this.message.speech }];
+    if (this.request.text !== '') {
+      this.sugesstions = [];
+      this.message = new Message(this.request.text, this.user.photoURL, new Date(), [], false);
       this.messages.push(this.message);
 
-      this.dialogFlowService.getResponse(this.message.speech).subscribe(res => {
+      this.dialogFlowService.getResponse(this.request.text).subscribe((res: DFResponse) => {
         res.result.fulfillment.messages.forEach(element => {
           if (element.type === 0) {
             this.messages.push(new Message(element.speech, 'assets/images/bot.png', res.timestamp, [], true));
           }
-          if (element.type === 2) {
+          if (element.type === 2 || element.type === 'suggestion_chips') {
             element.replies.forEach(sugession => {
               this.sugesstions.push(sugession);
             });
@@ -74,8 +76,7 @@ export class MessageFormComponent implements OnInit, OnDestroy {
       .subscribe(
         // listener
         (value) => {
-          // this.speechData = value;
-          this.message.speech = value;
+          this.request.speech = value;
           console.log(value);
         },
         // errror

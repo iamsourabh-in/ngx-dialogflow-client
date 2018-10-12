@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, AfterViewInit, ViewChild, ViewChildren, QueryList, ElementRef } from '@angular/core';
-import { Message } from '../../models/message';
+import { Message } from '../../models/response';
 import { MessageItemComponent } from '../../components/message-item/message-item.component';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'message-list',
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.scss']

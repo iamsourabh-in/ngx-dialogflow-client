@@ -1,24 +1,24 @@
 <li class="list-group-item">
+
   <div style="width: 100%;" *ngIf="message.isBot">
-    <img [src]="message.avatar" class="avatar" />
-
-    <p class="msgwrap">
-      <span>{{message.speech}}</span>
+   
+    <p class="msgwrap" *ngFor="let msg in message.messages">
+      <span>{{msg.speech}}</span>
     </p>
-
     <div class="timeform">
-      <!-- <i class="fa fa-clock-o" aria-hidden="true"></i>  -->
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
       <span class="timestamp">{{message.timestamp | date :
         'hh:mm' }}</span>
     </div>
   </div>
+
   <div style="width: 100%;" *ngIf="!message.isBot">
-    <img [src]="message.avatar" class="u-avatar" />
-    <p class="u-msgwrap">
-      <span>{{message.speech}}</span>
+    
+    <p class="u-msgwrap" *ngFor="let msg in response.messages">
+      <span>{{msg.speech}}</span>
     </p>
     <div class="u-timeform">
-      <!-- <i class="fa fa-clock-o" aria-hidden="true"></i> -->
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
       <span class="timestamp">at {{message.timestamp | date :'hh:mm' }}</span>
     </div>
   </div>

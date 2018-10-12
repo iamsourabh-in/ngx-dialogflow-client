@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Message } from '../../models/message';
+import { Message } from '../../models/response';
 import { Router } from '@angular/router';
 
 
@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
 		const stringJsonUser = localStorage.getItem('user_cred');
 		if (stringJsonUser !== null) {
 			this.user = JSON.parse(stringJsonUser);
-			this.message = new Message('', this.user.photoURL);
-			const defaultMsg = new Message('Welcome ' + this.user.displayName + ' to your health App', 'assets/images/bot.png', new Date(), [], true);
-			this.messages.push(defaultMsg);
+			// this.message = new Message('', this.user.photoURL);
+			// const defaultMsg = new Message(, 'assets/images/bot.png', new Date(), [], true);
+			// this.messages.push(defaultMsg);
 		} else {
 			this.router.navigate(['auth']);
 		}
@@ -33,6 +33,4 @@ export class HomeComponent implements OnInit {
 		localStorage.removeItem('user_cred');
 		this.router.navigate(['auth']);
 	}
-
-
 }
