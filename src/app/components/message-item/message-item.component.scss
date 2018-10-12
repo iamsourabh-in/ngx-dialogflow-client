@@ -1,0 +1,64 @@
+.message {
+  font-size: 1.2em;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.timeform {
+  text-align: right;
+  width: 6%;
+  margin-top: -10px;
+
+  .timestamp {
+    font-size: 0.8em;
+
+  }
+}
+
+.u-timeform {
+  float: right;
+  text-align: right;
+  width: 64%;
+  margin-top: -10px;
+
+  .timestamp {
+    font-size: 0.8em;
+
+  }
+}
+
+.avatar {
+  width: 50px;
+  margin-right: 20px;
+  float: left;
+}
+
+.msgwrap {
+  border-radius: 10px;
+  background-color: blueviolet;
+  padding: 10px;
+  margin-left: 60px;
+  color: white;
+  overflow-wrap: break-word;
+  width: 70%
+}
+
+.u-msgwrap {
+  border-radius: 10px;
+  background-color: blueviolet;
+  padding: 10px;
+  margin-right: 20px;
+  color: white;
+  overflow-wrap: break-word;
+  float: right;
+  width: 70%
+}
+
+.u-avatar {
+  width: 50px;
+  float: right;
+}
+
+.list-group-item {
+  border: 0px solid white !important;
+}

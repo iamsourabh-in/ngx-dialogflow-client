@@ -1,0 +1,12 @@
+.signout {
+  margin-left: 90%;
+  border: 1px solid black;
+  width: 70px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: gray;
+  color: white;
+  font-weight: 800;
+  margin-top: 10px;
+
+}

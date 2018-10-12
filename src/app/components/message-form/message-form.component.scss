@@ -1,0 +1,47 @@
+.chatcontrol {
+  width: 100%;
+  float: left;
+  bottom: 0px;
+  position: fixed;
+}
+
+.formwrap {
+
+
+  .chatinput {
+    width: 60%;
+    float: left;
+    border-radius: 0;
+    line-height: 29px;
+  }
+
+  .sendbtn {
+    width: 16%;
+    float: left;
+    border-radius: 0;
+    text-transform: uppercase;
+  }
+
+  .btn-wd {
+    width: 12%;
+    float: left;
+    border-radius: 0;
+    text-transform: uppercase;
+  }
+}
+
+.window {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.item {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+}

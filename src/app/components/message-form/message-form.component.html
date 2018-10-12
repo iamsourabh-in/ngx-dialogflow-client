@@ -1,0 +1,14 @@
+<div class="chatcontrol">
+  <div class="window">
+    <div class="item" *ngFor="let sugesstion of sugesstions" (click)="suggest(sugesstion)">
+      <a >{{sugesstion}}</a>
+    </div>
+  </div>
+  <div class="formwrap">
+    <input type="text" class="form-control chatinput" (keyup.enter)="sendMessage()" [(ngModel)]="message.speech" />
+    <button class="btn btn-success sendbtn" (click)="sendMessage()"><i class="material-icons">send</i></button>
+    <button class="btn btn-primary btn-wd" (click)="activateSpeechSearchMovie()" [disabled]="!showSearchButton"><i
+        class="material-icons">mic</i></button>
+    <button class="btn btn-primary btn-wd" (click)="stopSpeechSearchMovie()" [disabled]="showSearchButton"><i class="material-icons">mic_off</i></button>
+  </div>
+</div>
