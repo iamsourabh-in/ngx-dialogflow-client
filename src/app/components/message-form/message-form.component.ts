@@ -53,12 +53,20 @@ export class MessageFormComponent implements OnInit, OnDestroy {
 
   public sendMessage(): void {
     if (this.request.text !== '') {
+      // add ...
+
       this.sugesstions = [];
+
       this.message = new Message(this.request.text, this.user.providerData[0].photoURL, new Date(), [{ speech: this.request.text }], false);
       this.messages.push(this.message);
 
+      const amessage = new Message('Hello', 'assets/images/bot.png', new Date(), [{ speech: '...', type: 0 }], true);
+      this.messages.push(amessage);
+
+
       this.dialogFlowService.getResponse(this.request.text).subscribe((res: DFResponse) => {
         console.log(res);
+        this.messages.pop();
         this.messages.push(new Message('', 'assets/images/bot.png', res.timestamp, res.result.fulfillment.messages, true));
         res.result.fulfillment.messages.forEach(element => {
           if (element.type === 2 || element.type === 'suggestion_chips') {
