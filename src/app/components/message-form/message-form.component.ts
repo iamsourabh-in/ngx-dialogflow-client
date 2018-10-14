@@ -11,7 +11,8 @@ interface request { text: string; }
   // tslint:disable-next-line:component-selector
   selector: 'message-form',
   templateUrl: './message-form.component.html',
-  styleUrls: ['./message-form.component.scss']
+  styleUrls: ['./message-form.component.scss'],
+  providers: [AIAPIClient]
 })
 export class MessageFormComponent implements OnInit, OnDestroy {
   showSearchButton: boolean;
