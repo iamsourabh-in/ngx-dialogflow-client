@@ -11,3 +11,12 @@
   padding-top: 15px;
   padding-right: 15px;
 }
+
+.logo{
+  float: left;
+  font-weight: 800;
+  margin-left: 15px;
+  color: white !important;
+  font-family: inherit;
+  font-size: large;
+}
