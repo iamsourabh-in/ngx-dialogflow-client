@@ -34,7 +34,8 @@
 }
 
 .msgwrap {
-  border-radius: 30px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   background-color: blueviolet;
   padding: 10px;
   margin-left: 60px;
@@ -45,8 +46,9 @@
 
 
 .u-msgwrap {
-  border-radius: 30px;
-  background-color: blueviolet;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: gray;
   padding: 10px;
   margin-right: 20px;
   color: white;
