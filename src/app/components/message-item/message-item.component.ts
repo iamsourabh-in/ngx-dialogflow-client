@@ -7,11 +7,13 @@ import { Message } from '../../models/response';
   templateUrl: './message-item.component.html',
   styleUrls: ['./message-item.component.scss']
 })
+
 export class MessageItemComponent implements OnInit {
 
   // tslint:disable-next-line:no-input-rename
   @Input('message')
   public message: Message;
+
 
   constructor() { }
 

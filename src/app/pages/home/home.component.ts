@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit {
+
 	public message: Message;
 	public messages: Message[] = [];
 	public user: any;

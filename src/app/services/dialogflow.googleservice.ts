@@ -7,6 +7,7 @@ export class AIAPIClient {
     apiClient: any;
     sessionPath: any;
 
+
     constructor() {
         // this.apiClient = new ApiAiClient({ accessToken: 'b5833de0143640918029c8f6349ccd26' });
         // this.sessionClient = new dialogflow.SessionsClient();

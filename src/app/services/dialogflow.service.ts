@@ -9,6 +9,7 @@ export class DialogflowService {
   //private baseURL = 'https://dialogflow.googleapis.com/v2beta1/projects/healthapp-7e8f7/agent/sessions/12345:detectIntent';
 
   private baseURL: string = "https://api.dialogflow.com/v1/query?v=20150910";
+
   private token = 'b5833de0143640918029c8f6349ccd26';
 
   constructor(private http: Http) { }
