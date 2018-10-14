@@ -34,29 +34,30 @@
 }
 
 .msgwrap {
-  border-radius: 10px;
+  border-radius: 30px;
   background-color: blueviolet;
   padding: 10px;
   margin-left: 60px;
   color: white;
   overflow-wrap: break-word;
-  width: 70%
+  width: fit-content;
 }
 
 .u-msgwrap {
-  border-radius: 10px;
+  border-radius: 30px;
   background-color: blueviolet;
   padding: 10px;
   margin-right: 20px;
   color: white;
   overflow-wrap: break-word;
   float: right;
-  width: 70%
+  width: fit-content;
 }
 
 .u-avatar {
   width: 50px;
   float: right;
+  border-radius: 50px;
 }
 
 .list-group-item {

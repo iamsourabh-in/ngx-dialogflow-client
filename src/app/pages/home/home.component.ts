@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Message } from '../../models/response';
 import { Router } from '@angular/router';
 
-
 @Component({
 	selector: 'home',
-	templateUrl: 'home.component.html'
+	templateUrl: 'home.component.html',
+	styleUrls: ['home.component.css']
 })
 
 export class HomeComponent implements OnInit {
@@ -17,13 +17,12 @@ export class HomeComponent implements OnInit {
 		const stringJsonUser = localStorage.getItem('user_cred');
 		if (stringJsonUser !== null) {
 			this.user = JSON.parse(stringJsonUser);
-			// this.message = new Message('', this.user.photoURL);
-			// const defaultMsg = new Message(, 'assets/images/bot.png', new Date(), [], true);
-			// this.messages.push(defaultMsg);
+			this.message = new Message('', this.user.photoURL);
+			const defaultMsg = new Message('Hello', 'assets/images/bot.png', new Date(), [{ speech: 'Welcome to Health App', type: 0 }], true);
+			this.messages.push(defaultMsg);
 		} else {
 			this.router.navigate(['auth']);
 		}
-
 	}
 
 	constructor(private router: Router) {

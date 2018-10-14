@@ -1,12 +1,13 @@
 .signout {
-  margin-left: 90%;
-  border: 1px solid black;
-  width: 70px;
-  text-align: center;
-  border-radius: 10px;
-  background-color: gray;
-  color: white;
+  color: white !important;
   font-weight: 800;
-  margin-top: 10px;
+  cursor: pointer;
+}
 
+.header {
+  text-align: right;
+  height: 60px;
+  background-color: blueviolet;
+  padding-top: 15px;
+  padding-right: 15px;
 }

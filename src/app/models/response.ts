@@ -18,14 +18,17 @@ export class Message {
     type: any;
     platform: string;
     textToSpeech: string;
+    avatar: string;
     speech: string;
     isBot: boolean;
     replies: string[];
     messages: any;
+    timestamp: Date;
+    suggestions: any;
     constructor(speech: string, avatar: string, timestamp?: Date, messages: any = [], isBot: boolean = false) {
         this.speech = speech;
-        this.type = timestamp;
-        this.textToSpeech = avatar;
+        this.timestamp = timestamp;
+        this.avatar = avatar;
         this.messages = messages;
         this.isBot = isBot;
     }

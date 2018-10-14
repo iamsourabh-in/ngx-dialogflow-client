@@ -3,6 +3,9 @@ import { DFResponse, Message } from '../../models/response';
 import { DialogflowService } from '../../services/dialogflow.service';
 import { SpeechRecognitionService } from '../../services/Speech.service';
 import { Router } from '@angular/router';
+import { AIAPIClient } from '../../services/dialogflow.googleservice';
+
+interface request { text: string; }
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -15,7 +18,7 @@ export class MessageFormComponent implements OnInit, OnDestroy {
   speechSubscription: any;
   user: any;
   sugesstions = ['Hi', 'Hello', 'Help', 'What can you do for me?', 'Search Doctor', 'Search Dentist', 'Thanks'];
-  request: any = { text: '' };
+  request: request;
 
 
   // tslint:disable-next-line:no-input-rename
@@ -30,7 +33,10 @@ export class MessageFormComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router,
     private dialogFlowService: DialogflowService,
-    public speechRecognitionService: SpeechRecognitionService) {
+    public speechRecognitionService: SpeechRecognitionService,
+    public dialogflowClient: AIAPIClient
+  ) {
+    this.request = { text: '' };
     this.showSearchButton = true;
     const stringJsonUser = localStorage.getItem('user_cred');
     if (stringJsonUser == null) {
@@ -41,29 +47,35 @@ export class MessageFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.dialogflowClient.talk('hello');
   }
 
   public sendMessage(): void {
     if (this.request.text !== '') {
       this.sugesstions = [];
-      this.message = new Message(this.request.text, this.user.photoURL, new Date(), [], false);
+      this.message = new Message(this.request.text, this.user.providerData[0].photoURL, new Date(), [{ speech: this.request.text }], false);
       this.messages.push(this.message);
 
       this.dialogFlowService.getResponse(this.request.text).subscribe((res: DFResponse) => {
+        console.log(res);
+        this.messages.push(new Message('', 'assets/images/bot.png', res.timestamp, res.result.fulfillment.messages, true));
         res.result.fulfillment.messages.forEach(element => {
-          if (element.type === 0) {
-            this.messages.push(new Message(element.speech, 'assets/images/bot.png', res.timestamp, [], true));
-          }
           if (element.type === 2 || element.type === 'suggestion_chips') {
-            element.replies.forEach(sugession => {
-              this.sugesstions.push(sugession);
-            });
+            if (element.platform === 'google') {
+              element.suggestions.forEach(sugession => {
+                this.sugesstions.push(sugession.title);
+              });
+            } else {
+              element.replies.forEach(sugession => {
+                this.sugesstions.push(sugession);
+              });
+            }
           }
         });
 
       });
-
-      this.message = new Message('', this.user.photoURL);
+      this.request.text = '';
+      this.message = new Message('', this.user.providerData[0].photoURL);
     }
   }
   ngOnDestroy() {
@@ -76,7 +88,7 @@ export class MessageFormComponent implements OnInit, OnDestroy {
       .subscribe(
         // listener
         (value) => {
-          this.request.speech = value;
+          this.request.text = value;
           console.log(value);
         },
         // errror
@@ -95,7 +107,7 @@ export class MessageFormComponent implements OnInit, OnDestroy {
         });
   }
   suggest(suggestion) {
-    this.message.speech = suggestion;
+    this.request.text = suggestion;
     this.sendMessage();
     this.sugesstions = [];
   }

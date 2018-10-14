@@ -20,7 +20,7 @@ export class SpeechRecognitionService {
             const { webkitSpeechRecognition }: IWindow = <IWindow>window;
             this.speechRecognition = new webkitSpeechRecognition();
             this.speechRecognition.continuous = true;
-            // this.speechRecognition.interimResults = true;
+            this.speechRecognition.interimResults = true;
             this.speechRecognition.lang = 'en-us';
             this.speechRecognition.maxAlternatives = 1;
 

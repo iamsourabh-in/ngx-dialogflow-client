@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="chatform">
   <!-- <a routerLink='/profile'>Profile</a> -->
-  <div style="  margin-left: 90%;  border: 1px solid black;  width: 70px;  text-align: center;  border-radius: 10px;  background-color: gray; color: white;  font-weight: 800;  margin-top: 10px;">
-    <a (click)="signout()">Signout</a>
+  <div class="header">
+    <a class="signout" (click)="signout()">Signout</a>
   </div>
   <message-list [messages]="messages"></message-list>
   <message-form [message]="message" [messages]="messages"></message-form>
