@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 		if (stringJsonUser !== null) {
 			this.user = JSON.parse(stringJsonUser);
 			this.message = new Message('', this.user.photoURL);
-			const defaultMsg = new Message('Hello', 'assets/images/bot.png', new Date(), [{ speech: 'Welcome to Health App', type: 0 }], true);
+			const defaultMsg = new Message('Hello', 'assets/images/bot.png', new Date(), [{ speech: `Hello ${this.user.displayName}. What can I do for you?`, type: 0 }], true);
 			this.messages.push(defaultMsg);
 		} else {
 			this.router.navigate(['auth']);

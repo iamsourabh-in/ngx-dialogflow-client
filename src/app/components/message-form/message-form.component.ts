@@ -5,6 +5,7 @@ import { SpeechRecognitionService } from '../../services/Speech.service';
 import { Router } from '@angular/router';
 import { AIAPIClient } from '../../services/dialogflow.googleservice';
 
+// tslint:disable-next-line:class-name
 interface request { text: string; }
 
 @Component({
@@ -81,7 +82,10 @@ export class MessageFormComponent implements OnInit, OnDestroy {
             }
           }
         });
-
+        if (this.sugesstions.length === 0) {
+          this.sugesstions.push('Hi');
+          this.sugesstions.push('Help');
+        }
       });
       this.request.text = '';
       this.message = new Message('', this.user.providerData[0].photoURL);
