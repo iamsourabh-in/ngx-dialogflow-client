@@ -1,0 +1,7 @@
+{
+  "/v1": {
+      "target": "https://api.dialogflow.com",
+      "secure": "false",
+      "changeOrigin": true
+  }
+}
