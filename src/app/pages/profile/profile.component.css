@@ -1,3 +1,25 @@
-.profile {
+.signout {
+  color: white !important;
+  font-weight: 400;
+  cursor: pointer;
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 10px;
+}
 
+.header {
+  text-align: right;
+  height: 60px;
+  background-color: blueviolet;
+  padding-top: 15px;
+  padding-right: 15px;
+}
+
+.logo{
+  float: left;
+  font-weight: 800;
+  margin-left: 15px;
+  color: white !important;
+  font-family: inherit;
+  font-size: large;
 }

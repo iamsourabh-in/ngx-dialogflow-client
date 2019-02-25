@@ -1,7 +1,15 @@
 .signout {
   color: white !important;
-  font-weight: 800;
+  font-weight: 400;
   cursor: pointer;
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.signout + .signout{
+  border-left: 1px solid white;
+  padding-left: 10px;
 }
 
 .header {

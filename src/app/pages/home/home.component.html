@@ -3,7 +3,8 @@
   <!-- <a routerLink='/profile'>Profile</a> -->
   <div class="header">
     <a class="logo">Health App</a>
-    <a class="signout" (click)="signout()">Signout</a>
+    <a class="signout" routerLink="/profile">Profile</a>
+    <a class="signout" (click)="signout()"><i class="material-icons">power_settings_new</i></a>
   </div>
   <message-list [messages]="messages"></message-list>
   <message-form [message]="message" [messages]="messages"></message-form>

@@ -2,5 +2,6 @@
   max-width: 640px;
   margin: auto;
   height: 100vh;
-  border: 0px 2px 0px 2px solid blueviolet;
+  border-left: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
 }

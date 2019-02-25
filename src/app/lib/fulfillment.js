@@ -387,7 +387,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest(
 
     function SayTime() {
       var d = new Date();
-      agent.add(`The time is ${d.toDateString()}`);
+      agent.add(`The time is ${d.toTimeString()}`);
     }
 
     // Run the proper function handler based on the matched Dialogflow intent name
