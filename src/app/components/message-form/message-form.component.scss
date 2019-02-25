@@ -1,9 +1,10 @@
 .chatcontrol {
   width: 100%;
-  float: left;
-  bottom: 0px;
-  position: fixed;
   background-color: white;
+}
+
+.chatcontrol .btn{
+  border-radius: 0px;
 }
 
 .formwrap {
@@ -12,14 +13,13 @@
   .chatinput {
     width: 60%;
     float: left;
-    border-radius: 10px;
     line-height: 52px;
+    border-radius: 0px !important;
   }
 
   .sendbtn {
     width: 14%;
     float: left;
-    border-radius: 10px;
     text-transform: uppercase;
     line-height: 40px;
     padding-top: 20px;
@@ -28,12 +28,11 @@
   .btn-wd {
     width: 13%;
     float: left;
-    border-radius: 10px;
     text-transform: uppercase;
     line-height: 40px;
     padding-top: 20px;
   }
-  
+
 }
 
 .window {
@@ -89,4 +88,3 @@
       0px -1px 0px rgba(000,000,000,0.2),
       0px 1px 0px rgba(255,255,255,0.4);
   }
-  
