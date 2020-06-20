@@ -33,7 +33,6 @@ export class MessageListComponent implements OnInit, AfterViewInit {
     } catch (err) {
       console.log('Could not find the "chatList" element.');
     }
-    
   }
 
   ngOnInit() {

@@ -3,8 +3,46 @@
   <!-- <a routerLink='/profile'>Profile</a> -->
   <div class="header">
     <a class="logo">Health App</a>
-    <a class="signout" (click)="signout()">Signout</a>
+    <a class="signout" routerLink="/profile">Profile</a>
+    <a class="signout" data-toggle="modal" data-target="#logoutModalCenter">
+      <i class="material-icons">power_settings_new</i>
+    </a>
   </div>
   <message-list [messages]="messages"></message-list>
   <message-form [message]="message" [messages]="messages"></message-form>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="logoutModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Logout</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to proceed ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          No
+        </button>
+        <button type="button" data-dismiss="modal" class="btn btn-primary" (click)="signout()">Yes</button>
+      </div>
+    </div>
+  </div>
 </div>

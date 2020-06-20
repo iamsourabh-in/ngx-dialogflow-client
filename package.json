@@ -1,13 +1,15 @@
 {
   "name": "ngx-dialogflow-client",
-  "version": "0.0.0",
+  "version": "0.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "startproxy": "ng serve --proxy-config proxy.json --ssl true",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "release": "standard-version && git push origin master"
   },
   "private": true,
   "dependencies": {
@@ -26,7 +28,7 @@
     "@angular/router": "^6.1.0",
     "core-js": "^2.5.4",
     "firebase": "^5.5.3",
-    "ngx-auth-firebaseui": "^2.0.1",
+    "ngx-auth-firebaseui": "^2.3.2",
     "rxjs": "~6.2.0",
     "rxjs-compat": "^6.3.3",
     "zone.js": "~0.8.26"
@@ -48,6 +50,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
+    "standard-version": "^4.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~2.9.2"

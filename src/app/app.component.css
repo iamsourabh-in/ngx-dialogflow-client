@@ -1,0 +1,7 @@
+.main-wrapper{
+  max-width: 640px;
+  margin: auto;
+  height: 100vh;
+  border-left: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+}
