@@ -38,16 +38,6 @@ Currently only google login works.
 ![Interface Screen](https://github.com/codeRusty/ngx-dialogflow-client/blob/master/src/assets/UI.JPG?raw=true)
 
 
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
 
 
 ## License
