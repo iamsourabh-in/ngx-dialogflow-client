@@ -1,6 +1,8 @@
+
+import {map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
+
 
 
 @Injectable()
@@ -26,10 +28,10 @@ export class DialogflowService {
       sessionId: '12345'
     };
     return this.http
-      .post(`${this.baseURL}`, data, { headers: this.getHeaders() })
-      .map(res => {
+      .post(`${this.baseURL}`, data, { headers: this.getHeaders() }).pipe(
+      map(res => {
         return res.json();
-      });
+      }));
   }
 
   public getHeaders() {
