@@ -6,7 +6,7 @@ import { MessageItemComponent } from '../../components/message-item/message-item
   // tslint:disable-next-line:component-selector
   selector: 'message-list',
   templateUrl: './message-list.component.html',
-  styleUrls: ['./message-list.component.scss']
+  styleUrls: ['./message-list.component.css']
 })
 export class MessageListComponent implements OnInit, AfterViewInit {
 

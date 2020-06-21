@@ -5,7 +5,7 @@ import { Message } from '../../models/response';
   // tslint:disable-next-line:component-selector
   selector: 'message-item',
   templateUrl: './message-item.component.html',
-  styleUrls: ['./message-item.component.scss']
+  styleUrls: ['./message-item.component.css']
 })
 
 export class MessageItemComponent implements OnInit {

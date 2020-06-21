@@ -14,7 +14,7 @@ interface request {
   // tslint:disable-next-line:component-selector
   selector: "message-form",
   templateUrl: "./message-form.component.html",
-  styleUrls: ["./message-form.component.scss"],
+  styleUrls: ["./message-form.component.css"],
   providers: [AIAPIClient]
 })
 export class MessageFormComponent implements OnInit, OnDestroy {
