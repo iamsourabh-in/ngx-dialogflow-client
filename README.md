@@ -11,6 +11,7 @@ The app while talking to the bot also gives you suggestions base on the context.
 ## Technology Stack.
 
 Angular 6
+Material Design
 Firebase
 Dialog Flow API 1
 
@@ -22,6 +23,20 @@ To Run the application locally, download the zip or clone the repository. Run th
 ```bash
 npm install
 ```
+
+# Screenshots
+
+## Login
+
+![Login Screen](https://github.com/codeRusty/ngx-dialogflow-client/blob/master/src/assets/login.JPG?raw=true)
+
+Currently only google login works.
+
+## Interface
+
+
+![Interface Screen](https://github.com/codeRusty/ngx-dialogflow-client/blob/master/src/assets/UI.JPG?raw=true)
+
 
 ## Usage
 
